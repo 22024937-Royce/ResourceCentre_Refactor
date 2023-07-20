@@ -4,6 +4,7 @@ public class Item {
 	private String description;
 	private String dueDate;
 	private boolean isAvailable;
+	private boolean availability;
 
 	public Item(String assetTag, String description) {
 		this.assetTag = assetTag;
@@ -14,7 +15,8 @@ public class Item {
 	public String toString() {
 		
 		// Write your codes here
-		return null;
+		return String.format("%-10s %-30s %-10s %-10s", assetTag,
+				description, showAvailability(isAvailable),dueDate);
 	}
 	public String getAssetTag() {
 		return assetTag;
@@ -38,6 +40,16 @@ public class Item {
 
 	public void setIsAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
+	}
+	public String showAvailability(boolean isAvailable) {
+		String avail;
+		if(isAvailable==true) {
+			avail="yes";
+		}
+		else {
+			avail="no";
+		}
+		return avail;
 	}
 }
 

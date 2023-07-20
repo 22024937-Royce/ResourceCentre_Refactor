@@ -12,9 +12,14 @@ public class Camcorder extends Item{
 	}
 	
 	public String toString(){
-		String output = "";
 		// Write your codes here
-		return output;
+        return String.format("%-10s %-30s %-10s %-10s %-20d\n", getAssetTag(), getDescription(),
+
+                ResourceCentre.showAvailability(getIsAvailable()), getDueDate(), getOpticalZoom());
+
+    }
+
+		
 	}
-}
+
 
